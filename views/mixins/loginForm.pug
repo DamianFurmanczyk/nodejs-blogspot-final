@@ -1,0 +1,14 @@
+mixin loginForm(user = {})
+  .row
+    form(action='/login' method='POST').col.s12.m8.l6.offset-m2.offset-l3
+      .row
+        .input-field.col.s12
+          input#email.validate(type='email', value=user ? user.email : '', name='email', required)
+          label(for='email') Email
+      .row
+        .input-field.col.s12
+          input#password.validate(name='password', value=user ? user.password : '',  type='password', required)
+          label(for='password') Password
+      .row
+        input(type='submit', value='Sign in').btn.right
+        .clearfix

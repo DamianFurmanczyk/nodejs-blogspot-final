@@ -1,0 +1,31 @@
+
+.flashes--container
+    position fixed
+    right 20px
+    top 70px
+    max-width 400px
+    display flex
+    flex-direction column
+    align-items flex-end
+    z-index 999
+    pointer-events none
+
+span
+    &.flash--remover
+        color #dd2c00
+        cursor pointer
+        margin-left 10px
+        display inline-block
+        font-style oblique
+        pointer-events initial
+
+.flash
+    padding-right 16px
+    line-height 16px
+    position relative
+    padding 10px 15px
+    color white
+    display inline-block
+    border-radius 2px
+    background #484848
+    box-shadow rgba(30, 30, 30, 0.4) 0 2px 2px

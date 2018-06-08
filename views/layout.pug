@@ -1,0 +1,76 @@
+include mixins/flashes
+
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title #{'Node js blogspot'}
+    link(rel="stylesheet", href="/materialize/css/materialize.css")
+    link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+    link(rel="stylesheet", href="/animate.css")
+    link(rel="stylesheet", href="/style.css")
+  body
+
+    +flashesDump(flashes)
+  
+    main#ultramain
+
+      include partials/account-dropdown.pug
+
+
+      header
+        .navbar-fixed
+          nav.blue.lighten-1
+            .nav-wrapper
+              a.button-collapse(href='#', data-activates='mobile-demo')
+                i.material-icons menu
+              ul.right.hide-on-med-and-down
+                li
+                  a(href='/').nav-link_uncolappsable Home
+                if !user
+                  li
+                    a(href='/login').nav-link_uncolappsable Sign in
+                li
+                  a(href='/browse').nav-link_uncolappsable Browse
+                if user
+                  li
+                    a(href=`/browse/blog/${user.id}`).nav-link_uncolappsable My blog
+                  li
+                   a.dropdown-button(href='#', data-href='/editAccount' data-activates='dropdown2')
+                    | Account
+                    i.material-icons.right arrow_drop_down
+
+              ul#mobile-demo.side-nav
+                li
+                  a(href='/').nav-link_colappsable Home
+                li
+                  a(href='/browse').nav-link_uncolappsable Browse
+                if !user
+                  li
+                    a(href='/login').nav-link_uncolappsable Sign in
+                  li
+                    a(href='/register').nav-link_colappsable Sign up
+                if user
+                  li
+                    a(href=`/browse/blog/${user.id}`).nav-link_uncolappsable My blog
+                  li
+                    a.dropdown-button(href='#!', data-href='/editAccount' data-activates='dropdown')
+                      | Account
+                      i.material-icons.right arrow_drop_down
+
+      block content
+
+    footer.page-footer.blue.lighten-1
+      block footerContent
+      .footer-copyright.blue
+        .container
+          span Made with 💗 by 
+          a.footer-a(href='https://damianfurmanczyk.github.io/portfolio/') Damian Furmańczyk
+            
+
+
+      script(src="/js/jquery-3.2.1.min.js")
+      script(src="/materialize/js/materialize.min.js")
+      script(src="/js/main.js")

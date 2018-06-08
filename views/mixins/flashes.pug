@@ -1,0 +1,8 @@
+mixin flashesDump(flashes = false)
+  if flashes
+    .flashes--container
+        - const categories = Object.keys(locals.flashes)
+            each category in categories
+                each message in flashes[category]
+                    p(class=`animated flipInY flash`)= message
+                        span.flash--remover ✖

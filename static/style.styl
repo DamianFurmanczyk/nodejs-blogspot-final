@@ -1,0 +1,62 @@
+@require('stylus/forms')
+@require('stylus/flashes')
+@require('stylus/nav')
+@require('stylus/cards')
+
+.blue-text li a.active
+    color #fff !important
+
+.align-middle
+    display block
+    margin 0 auto
+
+.footer-a
+    color #fff !important
+    text-decoration: underline
+
+.small 
+    font-size 14px
+    position: absolute
+    top: 2px
+    right: 18px
+
+.text-center
+    text-align: center
+
+body
+    display flex
+    min-height 100vh
+    flex-direction column
+
+#ultramain
+    flex 1 0 auto
+    display flex
+    flex-direction column
+    background #fafafa
+
+::selection
+    background #484848
+    color #80d8ff
+
+#landingBg
+    background #fff url("/imgs/pexels-photo-261662.jpeg") no-repeat center
+    background-size cover
+    display flex
+    flex 1 0 auto
+    min-height 500px
+    justify-content center
+    align-items center
+    position relative
+    &:after
+        content ''
+        position absolute
+        top 0
+        bottom 0
+        left 0
+        right 0
+        background rgba(30, 30, 30, 0.4)
+
+.landingBg-buttonsContainer
+    a
+        width 330px
+        display block

@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  #landingBg
+    //- jezeli nie zalogowano
+    div.landingBg-buttonsContainer
+      if !user
+        a(href='/register').blue.darken-2.waves-effect.waves-light.btn-large Sign up for free!
+        br
+        a(href='/login').blue.darken-2.waves-effect.waves-light.btn-large Sing in!
+      else
+        a(href='/newPost').blue.darken-2.waves-effect.waves-light.btn-large Add new post
+          span.right ✍
+        br
+        a(href='/browse').blue.darken-2.waves-effect.waves-light.btn-large Browse
+        br
+        a(href='/logout').blue.darken-2.waves-effect.waves-light.btn-large Log out
+
+block footerContent
+  .container
+        .row
+          .col.s12.text-center
+            h5.white-text What do we offer?
+            ul
+              li ✔ professional service,
+            ul
+              li ✔ free unlimited accounts,
+            ul
+              li ✔ freedom of speech

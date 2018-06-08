@@ -1,0 +1,13 @@
+extends layout2
+
+block content
+    .row
+    form(action='/email' method='POST').col.s12
+        .row
+        .input-field.col.s6
+            input#first_name.validate(placeholder='Placeholder', type='text', name='from')
+            label(for='first_name') First Name
+        .input-field.col.s6
+            input#last_name.validate(type='text' name="content")
+            label(for='last_name') Last Name
+        input(type='submit' value='sabmit')

@@ -1,0 +1,13 @@
+mixin post(post = {})
+  .row
+    div.card-column.col.s12.m10.offset-m1
+      h2.header= post.title
+      .card.horizontal
+        .card-stacked
+          .card-content
+            span.small.right= h.moment(post.date).format('MMMM Do YYYY')
+            p= post.content
+            if  post.tags.length > 0
+              .card-action
+                each tag in post.tags
+                  span= tag

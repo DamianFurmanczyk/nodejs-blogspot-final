@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+$gray #455a64
+$blue #64b5f6
+
+.blogs-card .card
+  background lighten(#64b5f6, 5) !important
+  font-size 1.5rem
+  line-height 2
+
+.blog-container
+  box-shadow: 0 0 4px rgba(50,50,50,.5)
+  margin 40px auto
+  padding: 20px;
+
+.row:nth-child(even) .card-column
+  box-shadow 0 0 8px $gray
+  background #bbdefb
+
+.row:nth-child(odd) .card-column
+  box-shadow 0 0 8px $gray
+  background #64b5f6
+
+.card-column
+  font-family 'Open Sans', sans-serif
+  
+  margin-top 35px
+  .card-content
+    font-size 1.8rem
+    line-height 3
+    text-indent 1rem
+    position: relative
+  h2
+    padding 10px 0
+    margin 0
+    text-align: center
+  .card-action
+    font-size 1.2rem
+    line-height 1.5
+    text-indent 0
+    display flex
+    justify-content: center
+    for i in (1..10)
+      span:nth-child({i})
+        margin: 0 5px
+        border: 1px solid rgb(33+i*50,33+ i*33,222 -  i*15)
+        padding 5px 10px
+        border-radius: 3px
+        color: rgb(33+i*50,33+ i*33,222 -  i*15)

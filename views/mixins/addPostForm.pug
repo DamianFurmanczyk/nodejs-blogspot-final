@@ -1,0 +1,19 @@
+mixin addPostForm(postBody = {})
+  .row
+    form(action='/addPost' method='POST').col.s12.m10.xl6.offset-m1.offset-xl3.l8.offset-l2
+      .row
+        .input-field.col.s12
+          input(name='title', type='text', value=postBody && postBody.title)#title.validate
+          label(for="title") Title
+      .row
+        .input-field.col.s12
+          textarea(name='content')#content.materialize-textarea
+            | #{postBody && postBody.content}
+          label(for="content") Content
+      .row
+        .input-field.col.s12
+          input(name='tags', type='text', placeholder="format: 'tag1, tag2'")
+          label(for="content") Tags(optional)
+      .row
+        input(type='submit', value='Post').btn.right
+        .clearfix

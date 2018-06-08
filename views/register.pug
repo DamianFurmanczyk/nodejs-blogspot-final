@@ -1,0 +1,7 @@
+extends layout2
+include mixins/registerForm.pug
+
+block content
+  .container.form--container
+    h2.center-align Register
+    +regForm(userInfo)

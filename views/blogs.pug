@@ -1,0 +1,12 @@
+extends layout2
+include mixins/post
+
+block content
+  .container.blog-container
+    .row
+      each blog in blogs
+        a(href=`/browse/blog/${blog.id}`).col.s12.m10.offset-m1.blogs-card
+          .card.blue.darken-2
+            .card-content.white-text
+              h4.text-center= blog.username
+              p= blog.descr || 'No description'
